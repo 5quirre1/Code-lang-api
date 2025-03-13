@@ -11,5 +11,8 @@
       "src": "/languages",
       "dest": "/api/languages.py"
     }
-  ]
+  ],
+  "env": {
+    "FLASK_ENV": "production"
+  }
 }
