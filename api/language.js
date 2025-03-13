@@ -1,8 +1,4 @@
-from flask import Flask, jsonify
-
-app = Flask(__name__)
-
-extension_to_language = {
+const extensionToLanguage = {
     '.py': 'Python',
     '.go': 'Golang',
     '.js': 'JavaScript',
@@ -50,12 +46,9 @@ extension_to_language = {
     '.rexx': 'Rexx',
     '.pug': 'Pug',
     '.sass': 'Sass',
-    '.stylus': 'Stylus',
-}
+    '.stylus': 'Stylus'
+};
 
-@app.route('/languages', methods=['GET'])
-def get_languages():
-    return jsonify(extension_to_language)
-  
-def handler(request):
-    return app(request)
+module.exports = (req, res) => {
+    res.status(200).json(extensionToLanguage);
+};
